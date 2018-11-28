@@ -1,44 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Asana WebDev Take Home Test
 
-## Available Scripts
+This app was built with React with some styling done with Bootstrap 3. Bootstrap was used for styling the grid layout to display all of thumbnail images. The React app was creating with `create-react-app` to get a prototype of this application running quickly. `Font-Awesome` was also imported for two icon assets (expanding and close).
 
-In the project directory, you can run:
+## Running the Application
+Clone and navigate to the directory and run:
 
-### `npm start`
+```
+npm install
+npm start
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Explanation
+This is a simple app which displays a list of dog images. The images are laid out in a grid container in which the user can scroll to see more. The container supports infinite scrolling in which it will fetch more images to display. The infinite scrolling is utilize to display large volume of images without having to load all the images at once. As a demonstration, when the user scroll through the container, it will simply just repeat the images provided for this test.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Components
+There are a few components that was built for this application.
 
-### `npm test`
+### App
+This is the container which contains the bulk of the application. It is responsible for managing the state of the application as an user interact with it. It will keep track of whether an image is selected and responsible for toggling a modal to display an enlarge photo of the selected image.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Modal
+This modal will overlay the existing screen that the user is on and display an enlarged image of the selected card. This modal will dismiss and return back to the screen with all the images when the user click on the overlay or the close (`x`) button.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Card Container & CardImage
+The container will handle the click events for each card image while CardImage will simply be a presentation component to display a thumbnail version of a photo. Clicking on an CardImage will toggle a modal to display a larger image.
