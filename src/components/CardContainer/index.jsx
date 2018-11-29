@@ -24,8 +24,7 @@ class CardContainer extends React.Component {
   // Ideally this will make a request to the server for more images
   // right now, I will keep appending the same images to the component state
   handleScroll = () => {
-    if (this.refs.iScroll.scrollTop + this.refs.iScroll.clientHeight >= this.refs.iScroll.scrollHeight
-    ) {
+    if (this.refs.iScroll.scrollTop + this.refs.iScroll.clientHeight >= this.refs.iScroll.scrollHeight) {
       this.props.fetchMore();
     }
   }
