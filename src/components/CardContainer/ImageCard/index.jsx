@@ -4,7 +4,7 @@ import './styles.scss';
 // Display a smaller image of the original image.
 // Clicking on the image will open a modal to display 
 // an enlarge image.
-const ImageCard = ({ onClick, url }) => {
+const ImageCard = ({ onClick, url, alt }) => {
   const handleClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
